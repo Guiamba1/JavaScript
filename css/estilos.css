@@ -1,0 +1,18 @@
+
+
+div .cartao{
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: royalblue 4px solid;
+}
+
+.cartao1{
+    border-radius: 15px;
+}
+
+.cartao1:hover{
+cursor: pointer;
+background: #3586ff;
+color: #fff;
+text-transform: uppercase;
+}

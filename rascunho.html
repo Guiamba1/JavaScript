@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body >
+    
+    <div class="card text-center ">
+        <div class="card-header text-white bg-dark p-3">
+            <h1>Controlador de Palavras</h1>
+        </div>
+        <div class="card-body">
+<!--===========================================================-->
+
+<!--=======================palavra e entrada====================================-->
+<div class="container text-center">
+<!--===========================================================-->
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+            <h2 class="display-2 mb-5" id="palavraAtual">Ola</h2>
+            <p class="lead text-dark">Digite a palavra dada dentro de
+                <span class="text-success" id="segundos">5</span>
+                Segundos
+            </p>
+            
+            <input type="text" class="form-control" id="palavra" 
+            placeholder="Comece a digitar" autofocus>
+            <h4 class="mt-3" id="messagem">#</h4>
+
+        </div>
+
+    </div>
+
+<!--===========================================================-->    
+    <div class="row mt-5"><!-- Linha -->
+    
+
+<div class="col-sm-6 mt-3">
+    <div class="card border-dark">
+      <div class="card-body text-dark">
+        <h3> Tempo Restante: <span id="tempo">0</span></h3>
+       
+      </div>
+    </div>
+</div>
+
+<div class="col-sm-6 mt-3 ">
+    <div class="card border-dark">
+      <div class="card-body text-dark">
+        <h3> Pontuação: <span id="pontos">0</span></h3>
+       
+      </div>
+    </div>
+</div>
+
+<div class="col-sm-12 mt-3">
+    <div class="card border-dark">
+      <div class="card-body text-dark">
+        <h5>Instrucoes</h5>
+         <p>digite cada palavra em um determinado período de segundos para pontuar. 
+                para jogar de novo, basta digitar a palavra atual. sua pontuação</p>
+      </div>
+    </div>
+</div>
+
+    </div>
+
+</div>
+        </div>
+        <div class="card-footer text-white bg-dark p-3">
+          Rodape
+        </div>
+      </div>
+
+</body>
+</html>
+
+<!--     000000000000000000000000000000000000    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="cor">
+    
+    <div class="card text-center ">
+        <div class="card-header text-white bg-primary p-3">
+            <h1>Controlador de Palavras</h1>
+        </div>
+        <div class="card-body">
+<!--===========================================================-->
+
+<!--=======================palavra e entrada====================================-->
+<div class="container text-center">
+<!--===========================================================-->
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+            <h2 class="display-5 mb-2" id="palavraAtual">Ola</h2>
+            <h2 class="lead text-primary">Digite a palavra dada dentro de
+                <span class="text-success" id="segundos">5</span>
+                Segundos
+            </h2>
+            
+            <input type="text" class="form-control cartao1" id="palavra" 
+            placeholder="Comece a digitar"  autofocus>
+            <h4 class="mt-3 text-danger" id="messagem"></h4>
+
+        </div>
+
+    </div>
+
+<!--===========================================================-->    
+    <div class="row mt-5"><!-- Linha -->
+    
+
+<div class="col-sm-6 mt-3">
+    <div class="card border-primary cartao">
+      <div class="card-body text-primary">
+        <h3> Tempo Restante: <span id="tempo">0</span></h3>
+       
+      </div>
+    </div>
+</div>
+
+<div class="col-sm-6 mt-3 ">
+    <div class="card border-primary cartao">
+      <div class="card-body text-primary">
+        <h3> Pontuação: <span id="pontos">0</span></h3>
+       
+      </div>
+    </div>
+</div>
+
+<div class="col-sm-12 mt-3">
+    <div class="card border-primary cartao">
+      <div class="card-body text-primary">
+        <h2>Instrucoes</h2>
+         <h3>digite cada palavra em um determinado período de segundos para pontuar. <br>
+                para jogar de novo, basta digitar a palavra atual. sua pontuação</h3>
+      </div>
+    </div>
+</div>
+
+    </div>
+
+</div>
+        </div>
+        <div class="card-footer text-white bg-primary p-3">
+          Rodape
+        </div>
+</div>
+
+<script src="js/ficheiro.js"></script>
+</body>
+</html>
+<!-- 00000000000000000000000000000000000000000000000000000000000000-->
+
+
+window.addEventListener('load', iniciar);
+
+// variaveis globais
+let tempo = 5;
+let pontuacao = 0;
+let jogando; 
+
+//Constantes
+const digitarPalavra = document.querySelector('#palavra');
+const palavraActual = document.querySelector('#palavraAtual');
+const exibirPontos = document.querySelector('#pontos');
+const exibirTempo = document.querySelector('#tempo');
+const segundos = document.querySelector('#segundos');
+const messagem = document.querySelector('#messagem');
+
+//Palavras
+const palavras = [
+    'oscar','matola','viver','telescopio','papai','mamae',
+    'huble','python','cdn','trabalhar','namorar','filhos'
+
+];
+
+//inicializacao
+function iniciar(){
+    //
+    digitarPalavra.addEventListener('palavra',comparar);
+    //console.log('oscarito');
+    mostrar(palavras);
+    // 
+    setInterval(contagemRegressiva,1000);
+    //estado do jogo
+
+    setInterval(estado,50);
+    // começar a combinar na entrada
+
+
+
+}
+//comecar a comparar
+function comparar(){
+    if(palavraComparada()){
+        console.log('pagando texto');
+    }
+}
+//palavra digitada sendo comparada
+function palavraComparada(){
+    if (digitarPalavra.value == palavraActual.innerHTML) {
+        messagem.innerHTML = 'Certo';
+        return true;  
+    }
+    else{
+        messagem.innerHTML = '';
+        return false;
+    }
+
+}
+//Mostrar palavra
+function mostrar(palavras) {
+    const randIndex = Math.floor(Math.random() * palavras.length);
+    palavraActual.innerHTML = palavras[randIndex];
+}
+
+
+
+
+//cronômetro de contagem regressiva
+function contagemRegressiva(){
+    if(tempo > 0){
+        //diminuindo os segundos
+        tempo--;
+    }
+    else if(tempo == 0){
+        //fim do jogo
+        jogando = false;
+
+    } 
+    exibirTempo.innerHTML = tempo;  
+}
+
+//Estado do jogo
+function estado(){
+    if(!jogando && tempo == 0){
+        messagem.innerHTML = 'Game over';
+    }
+}

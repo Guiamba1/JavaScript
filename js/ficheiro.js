@@ -100,6 +100,7 @@ function estado(){
     if (!jogando && tempo == 0) {
         messagem.innerHTML = 'game Over'; 
         document.getElementById('messagem').style.color = 'red';
+        
         pontos = -1;
         
     }

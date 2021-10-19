@@ -1,7 +1,17 @@
 window.addEventListener('load', iniciar);
 
+const nivel = {
+    simples:  6,
+    medio : 4,
+    dificel : 2
+
+};
+
+// mudanca de nivel
+ const nivelAtual = nivel.medio;
+
 // variaveis globais
-let tempo = 5;
+let tempo = nivelAtual;
 let pontos = 0;
 let jogando; 
 
@@ -35,17 +45,28 @@ function comparar(){
        
         console.log('fuciona');
         jogando = true;
-        tempo = 6;
+        tempo = nivelAtual + 1;
         showWords(palavras);
         wordinput.value = ''; 
         pontos++;
               }
-              scoreDisplay.innerHTML = pontos;
+              // se a pontuacao for negativa mistre Zerro
+              if (pontos == -1) {
+                  scoreDisplay.innerHTML = 0;
+                  
+              }
+              else{
+                scoreDisplay.innerHTML = pontos;
+              }
+              
            }
 
 function compararPalavras(){
     if (wordinput.value == curentword.innerHTML) {
         messagem.innerHTML = 'certo';
+        if (messagem.innerHTML) {
+            document.getElementById('messagem').style.color = 'blue';
+        }
         return true;   
     }
     else{
@@ -78,6 +99,8 @@ function regressiva(){
 function estado(){
     if (!jogando && tempo == 0) {
         messagem.innerHTML = 'game Over'; 
+        document.getElementById('messagem').style.color = 'red';
+        pontos = -1;
         
     }
 }
